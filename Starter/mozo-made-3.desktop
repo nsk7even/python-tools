@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon=mate-power-statistics
+Icon[de_DE]=mate-power-statistics
+Exec=/home/nsk/bin/wasserstand.sh
+Name[de_DE]=Wasserstand
+Name=Wasserstand
