@@ -31,15 +31,15 @@ def xtract(input):
 
 def report(type, date, shares, val, newprice):
     if type == "buy":
-        print("\t" + date + "     Kauf: %3.2f/%5i € " % (shares, val),
+        print("\t" + date + "       Kauf: %3.2f/%5i € (%3.2f €) " % (shares, val, val/shares),
         "Akt. Wert: %8.2f € " % (newprice * shares),
-        "Gewinn: %8.2f €" % (newprice * shares - val))
+        "Gewinn: %8.2f € (%2.2f%%)" % (newprice * shares - val, 100/(newprice*shares)*(newprice * shares - val)))
     else:
         newlevel = val / newprice
         newshares = newlevel - shares
-        print("\t" + date + "  Verkauf: %3.2f/%5i € " % (shares, val),
-        "Wiederanlagespiegel: %3.2f Anteile (abzgl. Gebühren) " % (newlevel),
-        "Entwicklung: %3.2f Anteile (%2.2f%%)" % (newshares, 100/shares*newshares))
+        print("\t" + date + "    Verkauf: %3.2f/%5i € (%3.2f €)" % (shares, val, val/shares),
+        "\n\t> Wiederanlagespiegel: %3.2f Anteile (abzgl. Gebühren) " % (newlevel),
+        "\n\t>         Entwicklung: %3.2f Anteile (%2.2f%%)" % (newshares, 100/shares*newshares))
 
 
 url = 'https://www.finanzen.net/index/dax-realtime'
