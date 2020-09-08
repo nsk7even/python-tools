@@ -38,8 +38,10 @@ def report(type, date, shares, val, newprice):
         newlevel = val / newprice
         newshares = newlevel - shares
         print("\t" + date + "    Verkauf: %3.2f/%5i € (%3.2f €)" % (shares, val, val/shares),
-        "\n\t> Wiederanlagespiegel: %3.2f Anteile (abzgl. Gebühren) " % (newlevel),
-        "\n\t>         Entwicklung: %3.2f Anteile (%2.2f%%)" % (newshares, 100/shares*newshares))
+        "n. Ziel: %3.2f St. (-Geb.) " % (newlevel),
+        "Entw.: %3.2f St. (%2.2f%%)" % (newshares, 100/shares*newshares))
+#        "\n\t> Wiederanlagespiegel: %3.2f Anteile (abzgl. Gebühren) " % (newlevel),
+#        "\n\t>         Entwicklung: %3.2f Anteile (%2.2f%%)" % (newshares, 100/shares*newshares))
 
 
 url = 'https://www.finanzen.net/index/dax-realtime'
@@ -49,6 +51,7 @@ print("%s %s %s" % ("DAX:".ljust(15), points, change))
 url = "https://www.onvista.de/fonds/UNIDEUTSCHLAND-EUR-ACC-Fonds-DE0009750117"
 price, change = fetch (url, "span", 'price', "span", 'performance-pct')
 print("%s %8.2f EUR %s" % ("UniDeutschland:".ljust(15), price, change))
+report("sell", "2020-09-03", 47.790, 10037.81, price)
 report("sell", "2020-04-20", 47.149, 8053.84, price)
 report("buy", "2020-03-13", 47.149, 7000, price)
 report("buy", "2020-02-26", 47.794, 10000, price)
