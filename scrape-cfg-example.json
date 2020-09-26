@@ -1,0 +1,32 @@
+{
+    "UniDeutschland":
+    {
+        "date":
+        {
+            "type":"sell",
+            "shares":"1.234",
+            "value":"100.00"
+        },
+        "date":
+        {
+            "type":"buy",
+            "shares":"2.345",
+            "value":"99.0"
+        }
+    },
+    "UniRak":
+    {
+        "date":
+        {
+            "type":"sell",
+            "shares":"1.234",
+            "value":"100.00"
+        },
+        "date":
+        {
+            "type":"buy",
+            "shares":"2.345",
+            "value":"99.0"
+        }
+    }
+}
